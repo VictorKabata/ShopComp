@@ -3,23 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@id/login_fragment">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.doe.compshop.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/login_fragment"
+        android:name="com.doe.compshop.ui.fragments.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/login_to_registration"
+            app:destination="@id/registration_fragment" />
+        <action
+            android:id="@+id/login_to_home"
+            app:destination="@id/home_fragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.doe.compshop.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/registration_fragment"
+        android:name="com.doe.compshop.ui.fragments.registration.RegistrationFragment"
+        android:label="Registraton"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/registration_to_home"
+            app:destination="@id/home_fragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.doe.compshop.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/home_fragment"
+        android:name="com.doe.compshop.ui.fragments.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/home_to_details"
+            app:destination="@id/details_fragment" />
+        <action
+            android:id="@+id/home_to_profile"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.doe.compshop.ui.fragments.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/cart_to_details"
+            app:destination="@id/details_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.doe.compshop.ui.fragments.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.doe.compshop.ui.fragments.settings.SettingsFragment"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.doe.compshop.ui.fragments.details.DetailsFragment"
+        android:label="Item Details"
+        tools:layout="@layout/fragment_details" />
 </navigation>
