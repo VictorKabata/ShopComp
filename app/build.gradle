@@ -88,4 +88,7 @@ dependencies {
 
     //Shape of View Library
     implementation "com.github.florent37:shapeofview:$shape_of_view_version"
+
+    //DataStore
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
 }
