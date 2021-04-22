@@ -17,7 +17,7 @@ interface UserDao {
     fun loginUser(email: String, password: String): Flow<User?>
 
     @Query("SELECT * FROM `User Table`")
-    fun getUserDetails(): Flow<User>
+    fun getLoggedInUser(): Flow<User>
 
     @Query("DELETE FROM `User Table`")
     suspend fun logOutUser()

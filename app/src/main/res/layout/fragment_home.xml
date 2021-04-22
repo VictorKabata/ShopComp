@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.home.HomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.fragments.home.HomeFragment">
 
-</FrameLayout>
+        <!-- region $AuthRegion-->
+        <TextView
+            android:id="@+id/textView_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/hello"
+            android:textColor="@color/textPrimary"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_black"
+            android:maxLines="1"
+            android:textColor="@color/textPrimary"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_profile"
+            app:layout_constraintStart_toStartOf="@id/textView_hello"
+            app:layout_constraintTop_toBottomOf="@id/textView_hello"
+            tools:text="Victor Kabata" />
+
+        <ImageView
+            android:id="@+id/imageView_profile"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintBottom_toBottomOf="@id/textView_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView_hello" />
+
+        <!--endregion-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

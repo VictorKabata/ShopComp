@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.doe.compshop.ui.fragments.login.AuthViewModel" />
@@ -44,8 +45,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="25dp"
+            android:elevation="8dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="12dp"
+            app:cardMaxElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -191,12 +194,12 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/primaryColor"
+                    android:elevation="12dp"
                     android:fontFamily="@font/roboto_bold"
                     android:onClick="@{viewModel::registerUser}"
                     android:padding="10dp"
                     android:text="@string/create_account"
                     android:textAllCaps="false"
-                    android:elevation="12dp"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/textInputLayout5"

@@ -24,6 +24,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="username">Username</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="phone_number">Phone Number</string>
@@ -35,5 +36,10 @@
 
     <string name="don_t_have_an_account">Don\'t have an account? </string>
     <string name="already_have_an_account">Already have an account?</string>
+
+    <string name="hello">Hello,</string>
+
+    <string name="personal_information">Personal Information</string>
+    <string name="sign_out">Sign Out</string>
 
 </resources>

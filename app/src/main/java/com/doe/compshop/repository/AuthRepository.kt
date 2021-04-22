@@ -10,7 +10,7 @@ class AuthRepository @Inject constructor(
     private val authDataStore: AuthDataStore
 ) {
 
-    fun getUserDetails() = appDatabase.userDao().getUserDetails()
+    fun getLoggedInUser() = appDatabase.userDao().getLoggedInUser()
 
     fun loginUser(email: String, password: String)=appDatabase.userDao().loginUser(email, password)
 
@@ -22,6 +22,6 @@ class AuthRepository @Inject constructor(
 
     suspend fun isUserLoggedIn() = authDataStore.isUserLoggedIn()
 
-    suspend fun setUserLoggedOut() = authDataStore.loginUser()
+    suspend fun setUserLoggedOut() = authDataStore.logOutUser()
 
 }

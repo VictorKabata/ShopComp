@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.doe.compshop.ui.fragments.login.AuthViewModel" />
@@ -14,6 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragments.login.LoginFragment">
 
+        <!-- region $ArchBackgroundRegion-->
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
             android:layout_width="match_parent"
@@ -37,14 +39,18 @@
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
+        <!--endregion-->
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="25dp"
+            android:elevation="8dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="12dp"
+            app:cardMaxElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -113,12 +119,12 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/primaryColor"
+                    android:elevation="12dp"
                     android:fontFamily="@font/roboto_bold"
                     android:onClick="@{viewModel::loginUser}"
                     android:padding="10dp"
                     android:text="@string/sign_in"
                     android:textAllCaps="false"
-                    android:elevation="12dp"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/textInputLayout2"

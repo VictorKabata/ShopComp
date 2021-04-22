@@ -1,60 +1,69 @@
 package com.doe.compshop.ui.fragments.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.doe.compshop.R
+import com.doe.compshop.databinding.FragmentProfileBinding
+import com.doe.compshop.util.*
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class ProfileFragment : Fragment(), StateListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentProfileBinding
+    private val viewModel by viewModels<ProfileViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)
+        viewModel.stateListener = this
+
+        binding.buttonSignOut.setOnClickListener {
+            viewModel.logOutUser()
+
+            findNavController().navigate(R.id.profile_to_login)
+        }
+
+        initUI()
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun initUI() {
+        viewModel.loggedInUser.observe(viewLifecycleOwner, { user ->
+            val username = "${user.firstName!!} ${user.lastName!!}"
+
+            binding.textViewUsername.text = username
+            binding.textViewEmail.text = user.email
+            binding.textViewPhone.text = user.phoneNumber
+
+        })
     }
+
+    override fun onLoading() {
+        binding.progressBarProfile.show()
+    }
+
+    override fun onSuccess(message: String?) {
+        binding.progressBarProfile.hide()
+
+        requireActivity().log(message!!)
+    }
+
+    override fun onError(message: String) {
+        binding.progressBarProfile.hide()
+
+        requireActivity().toast(message)
+        requireActivity().log(message)
+    }
+
 }
