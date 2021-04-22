@@ -37,6 +37,13 @@ class ProfileFragment : Fragment(), StateListener {
 
         initUI()
 
+        binding.buttonSignOut.setOnClickListener {
+            viewModel.logOutUser()
+            requireActivity().toast("Logging Out")
+
+            findNavController().navigate(R.id.profile_to_login)
+        }
+
         return binding.root
     }
 

@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class User(
 
     @ColumnInfo(name = "ID")
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
 
     @ColumnInfo(name = "First_Name")

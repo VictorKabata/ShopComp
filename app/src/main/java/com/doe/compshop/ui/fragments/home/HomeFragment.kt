@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.doe.compshop.R
 import com.doe.compshop.databinding.FragmentHomeBinding
 import com.doe.compshop.models.Product
@@ -68,7 +69,8 @@ class HomeFragment : Fragment(), StateListener, OnClick {
     }
 
     override fun onClick(product: Product) {
-        //Navigate to product detail fragment
+        val action = HomeFragmentDirections.homeToDetails(product)
+        findNavController().navigate(action)
     }
 
     override fun onLoading() {

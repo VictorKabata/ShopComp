@@ -54,7 +54,10 @@ class RegistrationFragment : Fragment(), StateListener {
     override fun onError(message: String) {
         binding.progressBarRegister.hide()
 
-        requireActivity().toast(message)
-        requireActivity().log(message)
+        if (isAdded){
+            requireActivity().toast(message)
+            requireActivity().log(message)
+        }
+
     }
 }

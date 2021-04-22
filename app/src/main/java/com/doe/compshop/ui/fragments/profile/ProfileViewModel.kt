@@ -46,7 +46,7 @@ class ProfileViewModel @ViewModelInject constructor(private val authRepository: 
 
         viewModelScope.launch {
             try {
-                authRepository.logOutUser()
+                //authRepository.logOutUser()
 
                 authRepository.setUserLoggedOut()
 

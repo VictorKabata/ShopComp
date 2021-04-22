@@ -28,14 +28,15 @@
                 <ImageView
                     android:id="@+id/imageView_details"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
                     app:layout_collapseMode="pin" />
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar_details"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/ic_back"
                     android:elevation="5dp"
                     android:fitsSystemWindows="true"
                     android:popupTheme="@style/Theme.AppCompat.Light"

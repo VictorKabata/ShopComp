@@ -1,10 +1,13 @@
 package com.doe.compshop.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 
+@Parcelize
 @Entity(tableName = "Product Table")
 data class Product(
 
@@ -35,6 +38,4 @@ data class Product(
 
     @ColumnInfo(name = "Model_Number")
     val modelNumber: String
-
-
-)
+):Parcelable

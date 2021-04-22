@@ -53,7 +53,9 @@ class LoginFragment : Fragment(), StateListener {
     override fun onError(message: String) {
         binding.progressBarLogin.hide()
 
-        requireActivity().toast(message)
-        requireActivity().log(message)
+        if (isAdded){
+            requireActivity().toast(message)
+            requireActivity().log(message)
+        }
     }
 }
