@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/splash_fragment">
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.doe.compshop.ui.fragments.login.LoginFragment"
@@ -55,10 +55,6 @@
             android:id="@+id/profile_to_login"
             app:destination="@id/login_fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/settings_fragment"
-        android:name="com.doe.compshop.ui.fragments.settings.SettingsFragment"
-        android:label="Settings" />
     <fragment
         android:id="@+id/details_fragment"
         android:name="com.doe.compshop.ui.fragments.details.DetailsFragment"

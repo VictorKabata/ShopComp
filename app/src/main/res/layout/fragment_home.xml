@@ -87,7 +87,7 @@
                 android:fontFamily="@font/roboto_black"
                 android:text="@string/monitors"
                 android:textColor="@color/textPrimary"
-                android:textSize="18sp"
+                android:textSize="21sp"
                 app:layout_constraintStart_toStartOf="@id/editText_search"
                 app:layout_constraintTop_toBottomOf="@id/editText_search" />
 
@@ -116,7 +116,7 @@
                 android:fontFamily="@font/roboto_black"
                 android:text="@string/processors"
                 android:textColor="@color/textPrimary"
-                android:textSize="18sp"
+                android:textSize="21sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerview_monitors" />
 
@@ -145,7 +145,7 @@
                 android:fontFamily="@font/roboto_black"
                 android:text="@string/graphic_cards"
                 android:textColor="@color/textPrimary"
-                android:textSize="18sp"
+                android:textSize="21sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerview_processors" />
 
@@ -174,7 +174,7 @@
                 android:fontFamily="@font/roboto_black"
                 android:text="@string/storage"
                 android:textColor="@color/textPrimary"
-                android:textSize="18sp"
+                android:textSize="21sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerview_graphic_cards" />
 

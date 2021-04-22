@@ -22,30 +22,16 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
 
-        /*val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.home_fragment,
-                R.id.cart_fragment,
-                R.id.settings_fragment,
-                R.id.profile_fragment
-            )
-        )
-
-        setupActionBarWithNavController(navController, appBarConfiguration)*/
-
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.login_fragment -> {
-                    binding.bottomNav.visibility = GONE
+                R.id.home_fragment -> {
+                    binding.bottomNav.visibility = VISIBLE
                 }
-                R.id.registration_fragment -> {
-                    binding.bottomNav.visibility = GONE
-                }
-                R.id.profile_fragment -> {
-                    binding.bottomNav.visibility = GONE
+                R.id.cart_fragment -> {
+                    binding.bottomNav.visibility = VISIBLE
                 }
                 else -> {
-                    binding.bottomNav.visibility = VISIBLE
+                    binding.bottomNav.visibility = GONE
                 }
             }
         }

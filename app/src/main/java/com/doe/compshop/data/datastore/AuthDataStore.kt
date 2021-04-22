@@ -25,7 +25,7 @@ class AuthDataStore constructor(private val context: Context) {
         val dataStoreKey = booleanPreferencesKey(AUTH_DATASTORE_KEY)
         val loginStatus = context.dataStore.data.first()
 
-        return loginStatus[dataStoreKey]!!  //?: false //If null return false else return value in datastore
+        return loginStatus[dataStoreKey]  ?: false //If null return false else return value in datastore
     }
 
     //Marks the user as logged out

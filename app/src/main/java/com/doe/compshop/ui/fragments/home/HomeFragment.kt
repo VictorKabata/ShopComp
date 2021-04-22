@@ -10,13 +10,20 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.doe.compshop.R
 import com.doe.compshop.databinding.FragmentHomeBinding
+import com.doe.compshop.models.Product
+import com.doe.compshop.ui.adapters.ProductsRecyclerViewAdapter
+import com.doe.compshop.util.Constants.GRAPHIC_CARDS
+import com.doe.compshop.util.Constants.MONITORS
+import com.doe.compshop.util.Constants.PROCESSORS
+import com.doe.compshop.util.Constants.STORAGE
+import com.doe.compshop.util.OnClick
 import com.doe.compshop.util.StateListener
 import com.doe.compshop.util.log
 import com.doe.compshop.util.toast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(), StateListener {
+class HomeFragment : Fragment(), StateListener, OnClick {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel by viewModels<HomeViewModel>()
@@ -43,6 +50,25 @@ class HomeFragment : Fragment(), StateListener {
             val username = "${user.firstName!!} ${user.lastName!!}"
             binding.textViewUsername.text = username
         })
+
+        viewModel.products.observe(viewLifecycleOwner, { products ->
+            binding.recyclerviewMonitors.adapter =
+                ProductsRecyclerViewAdapter(products, MONITORS, this)
+
+            binding.recyclerviewProcessors.adapter =
+                ProductsRecyclerViewAdapter(products, PROCESSORS, this)
+
+            binding.recyclerviewGraphicCards.adapter =
+                ProductsRecyclerViewAdapter(products, GRAPHIC_CARDS, this)
+
+            binding.recyclerviewStorage.adapter =
+                ProductsRecyclerViewAdapter(products, STORAGE, this)
+        })
+
+    }
+
+    override fun onClick(product: Product) {
+        //Navigate to product detail fragment
     }
 
     override fun onLoading() {
