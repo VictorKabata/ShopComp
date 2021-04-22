@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_product"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="12dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView_product"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textView_product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="1"
+                android:textColor="@color/textPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView_product"
+                app:layout_constraintTop_toTopOf="@id/cardView_product"
+                tools:text="Nvidia Geforce RTX 3090" />
+
+            <TextView
+                android:id="@+id/textView_product_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:maxLines="5"
+                android:textColor="@color/textSecondary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textView_product_name"
+                app:layout_constraintTop_toBottomOf="@id/textView_product_name"
+                tools:text="@string/placeholder_long_text" />
+
+            <TextView
+                android:id="@+id/textView_product_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_black"
+                android:maxLines="1"
+                android:textColor="@color/primaryColor"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textView_product_description"
+                app:layout_constraintTop_toBottomOf="@id/textView_product_description"
+                tools:text="USD 420" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

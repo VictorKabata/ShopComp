@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.doe.compshop.R
 import com.doe.compshop.databinding.ItemHomeBinding
 import com.doe.compshop.models.Product
@@ -48,9 +50,13 @@ class ProductRecyclerviewViewHolder(private val binding: ItemHomeBinding) :
 
     @SuppressLint("SetTextI18n")
     fun bind(context: Context, product: Product) {
-        //Glide.with(context).load(product.imageUrl).into(binding.imageViewProduct)
+        Glide.with(context)
+            .load(context.getDrawable(product.imageUrl!!))
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(binding.imageViewProduct)
+
         binding.textViewProductName.text = product.name
-        binding.textViewProductPrice.text = "${product.price} Ksh."
+        binding.textViewProductPrice.text = "USD ${product.price}"
     }
 
 }

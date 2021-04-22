@@ -8,8 +8,8 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-@Entity(tableName = "Product Table")
-data class Product(
+@Entity(tableName = "Cart Table")
+data class CartProduct(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID")
@@ -25,7 +25,7 @@ data class Product(
     val description: String,
 
     @ColumnInfo(name = "ImageUrl")
-    val imageUrl: Int?, //or String
+    val imageUrl: Int?,
 
     @ColumnInfo(name = "Category")
     val category: String,

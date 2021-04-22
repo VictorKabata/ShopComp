@@ -23,7 +23,7 @@
 
             <ImageView
                 android:id="@+id/imageView_product"
-                android:layout_width="140dp"
+                android:layout_width="160dp"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
@@ -51,12 +51,12 @@
             android:ellipsize="end"
             android:fontFamily="@font/roboto_black"
             android:maxLines="1"
-            android:textColor="@color/primaryColor"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/textView_product_name"
             app:layout_constraintStart_toStartOf="@id/textView_product_name"
             app:layout_constraintTop_toBottomOf="@id/textView_product_name"
-            tools:text="420 Ksh." />
+            tools:text="USD 420" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
