@@ -33,6 +33,8 @@ class ProfileFragment : Fragment(), StateListener {
             findNavController().navigate(R.id.profile_to_login)
         }
 
+        binding.imageViewBack.setOnClickListener { findNavController().navigateUp() }
+
         initUI()
 
         return binding.root
@@ -62,7 +64,7 @@ class ProfileFragment : Fragment(), StateListener {
     override fun onError(message: String) {
         binding.progressBarProfile.hide()
 
-        requireActivity().toast(message)
+        if (isAdded) requireActivity().toast(message)
         requireActivity().log(message)
     }
 

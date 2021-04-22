@@ -41,5 +41,7 @@
 
     <string name="personal_information">Personal Information</string>
     <string name="sign_out">Sign Out</string>
+    <string name="search">Search</string>
+    <string name="monitors">Monitors</string>
 
 </resources>

@@ -31,6 +31,8 @@ class HomeFragment : Fragment(), StateListener {
             it.findNavController().navigate(R.id.home_to_profile)
         }
 
+        binding.editTextSearch.setOnClickListener { requireActivity().toast("Feature is under development") }
+
         initUI()
 
         return binding.root

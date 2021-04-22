@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="25dp"
-            android:elevation="8dp"
+            android:elevation="12dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="12dp"
             app:cardMaxElevation="8dp"

@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.registration_fragment -> {
                     binding.bottomNav.visibility = GONE
                 }
+                R.id.profile_fragment -> {
+                    binding.bottomNav.visibility = GONE
+                }
                 else -> {
                     binding.bottomNav.visibility = VISIBLE
                 }
