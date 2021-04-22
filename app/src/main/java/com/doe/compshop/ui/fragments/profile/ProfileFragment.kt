@@ -64,8 +64,10 @@ class ProfileFragment : Fragment(), StateListener {
     override fun onError(message: String) {
         binding.progressBarProfile.hide()
 
-        if (isAdded) requireActivity().toast(message)
-        requireActivity().log(message)
+        if (isAdded) {
+            requireActivity().toast(message)
+            requireActivity().log(message)
+        }
     }
 
 }

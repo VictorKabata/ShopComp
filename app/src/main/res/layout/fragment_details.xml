@@ -1,14 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.details.DetailsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.fragments.details.DetailsFragment">
 
-</FrameLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primaryColor"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat"
+                app:contentScrim="@color/primaryColor"
+                app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/primaryColor">
+
+                <ImageView
+                    android:id="@+id/imageView_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    app:layout_collapseMode="pin" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="5dp"
+                    android:fitsSystemWindows="true"
+                    android:popupTheme="@style/Theme.AppCompat.Light"
+                    app:layout_collapseMode="pin" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:paddingTop="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp">
+
+                <!--region $ProductNameRegion-->
+                <TextView
+                    android:id="@+id/textView_productName_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/product_name"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_product_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView_productName_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_productName_title"
+                    tools:text="Nvidia RTX 3060" />
+                <!--endregion-->
+
+                <!--region $ProductPriceRegion-->
+                <TextView
+                    android:id="@+id/textView_product_price_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/price"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_name"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_name" />
+
+                <TextView
+                    android:id="@+id/textView_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_price_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_price_title"
+                    tools:text="Ksh. 420" />
+                <!--endregion-->
+
+                <!--region $ProductDescriptionRegion-->
+                <TextView
+                    android:id="@+id/textView_product_description_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/product_description"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_price"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_price" />
+
+                <TextView
+                    android:id="@+id/textView_product_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_description_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_description_title"
+                    tools:text="@string/placeholder_long_text" />
+                <!--endregion-->
+
+                <!--region $ProductSpecRegion-->
+                <TextView
+                    android:id="@+id/textView_product_spec_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/product_spec"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_description"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_description" />
+
+                <TextView
+                    android:id="@+id/textView_product_spec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_spec_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_spec_title"
+                    tools:text="4GB VRAM" />
+                <!--endregion-->
+
+                <!--region $ProductModelRegion-->
+                <TextView
+                    android:id="@+id/textView_product_model_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/model"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_spec"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_spec" />
+
+                <TextView
+                    android:id="@+id/textView_product_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_model_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_model_title"
+                    tools:text="RTX 3060" />
+                <!--endregion-->
+
+                <!--region $ProductInStockRegion-->
+                <TextView
+                    android:id="@+id/textView_product_stock_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/in_stock"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_model"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_model" />
+
+                <TextView
+                    android:id="@+id/textView_product_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/textView_product_stock_title"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_stock_title"
+                    tools:text="Available" />
+                <!--endregion-->
+
+                <Button
+                    android:id="@+id/button_add_to_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:elevation="12dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="10dp"
+                    android:text="@string/add_to_cart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView_product_stock" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

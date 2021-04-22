@@ -39,9 +39,23 @@
 
     <string name="hello">Hello,</string>
 
+    <string name="search">Search</string>
+
     <string name="personal_information">Personal Information</string>
     <string name="sign_out">Sign Out</string>
-    <string name="search">Search</string>
-    <string name="monitors">Monitors</string>
+
+    <string name="monitors">Monitors.</string>
+    <string name="processors">Processors.</string>
+    <string name="graphic_cards">Graphic Cards.</string>
+    <string name="storage">Storage.</string>
+    <string name="product_name">Product Name</string>
+    <string name="price">Price</string>
+    <string name="product_description">Product Description</string>
+
+    <string name="placeholder_long_text" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor orci non tortor semper, non laoreet libero posuere. Integer odio neque, scelerisque id dolor et, ullamcorper tristique elit. Quisque imperdiet id felis in elementum. Proin ex nisl, tincidunt eget ex at, porta maximus ante.</string>
+    <string name="product_spec">Product Spec</string>
+    <string name="model">Model</string>
+    <string name="in_stock">In Stock</string>
+    <string name="add_to_cart">Add to Cart</string>
 
 </resources>
